@@ -1,0 +1,17 @@
+def find_Max(arr):
+    max = arr[0]
+    for item in arr:
+        if item > max:
+            max = item
+    return max
+
+print(find_Max([1,2,3,4,5]))
+
+def find_Min(arr):
+    min = arr[0]
+    for item in arr:
+        if item < min:
+            min = item
+    return min
+
+print(find_Min([1,2,3,4,5]))
