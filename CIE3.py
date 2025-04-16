@@ -1,12 +1,11 @@
 import time
-n = int(input("Enter the number of elements in the array: "))
-print("Enter the elements in sorted order:")
-arr = [int(input()) for _ in range(n)]
-target = int(input("Enter the value to search: "))
 
-# Measure start time
+#LINEAR
+n = int(input("Enter the number of elements: "))
+print("Enter the elements:")
+arr = [int(input()) for _ in range(n)]
+target = int(input("Enter the search value: "))
 found = False
-start_time = time.time()
 for i in range(n):
     if arr[i] == target:
         print(f"Element found at index {i}")
@@ -14,17 +13,12 @@ for i in range(n):
         break
 if not found:
     print("Element not found")
-# Measure end time
-end_time = time.time()
-execution_time = end_time - start_time
-print(f"Time taken to find the maximum element: {execution_time:.2f} seconds")
 
-n = int(input("Enter the number of elements in the array: "))
-print("Enter the elements in sorted order:")
+#BINARY
+n = int(input("Enter the number of elements: "))
+print("Enter the elements:")
 arr = [int(input()) for _ in range(n)]
-
-target = int(input("Enter the value to search: "))
-
+target = int(input("Enter the search value: "))
 left, right = 0, n - 1
 found = False
 while left <= right:
@@ -37,33 +31,28 @@ while left <= right:
         left = mid + 1  # Search in the right half
     else:
         right = mid - 1  # Search in the left half
-
 if not found:
     print("Element not found")
 
+#BUBBLE
 n = int(input("Enter the number of elements: "))
-print("Enter the elements one by one:")
-
+print("Enter the elements:")
 arr = [int(input()) for _ in range(n)]
-
 comparisons = 0
 swaps = 0
-
 for i in range(n - 1):
     for j in range(n - 1 - i):
         comparisons += 1
         if arr[j] > arr[j + 1]:
-            # Swap the elements
             arr[j], arr[j + 1] = arr[j + 1], arr[j]
             swaps += 1
-
 print("Sorted Array using Bubble Sort:", arr)
 print(f"Total Comparisons: {comparisons}")
 print(f"Total Swaps: {swaps}")
 
+#SELECTION
 n = int(input("Enter the number of elements: "))
-print("Enter the elements one by one:")
-
+print("Enter the elements:")
 arr = [int(input()) for _ in range(n)]
 
 for i in range(n - 1):
@@ -75,7 +64,7 @@ for i in range(n - 1):
 
 print("Sorted Array using Selection Sort:", arr)
 
-import time
+#MERGE
 
 def merge_sort(arr):
     if len(arr) <= 1:
